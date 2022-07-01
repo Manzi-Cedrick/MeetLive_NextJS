@@ -1,5 +1,4 @@
-
-import UiCards from '../components/meetups/UiCards'
+import UiCards from "../components/meetups/UiCards";
 const DummyMeetUps = [
   {
     id: 1,
@@ -38,16 +37,14 @@ const DummyMeetUps = [
   },
 ];
 export default function Home(props) {
-  return (
-    <UiCards meetUp={props.meetUp}/>
-  )
+  return <UiCards meetUp={props.meetUp} />;
 }
 export async function getServerSideProps(context) {
   const req = context.req;
   const res = context.res;
   return {
-    props :{
-      meetUp : DummyMeetUps  
-    }
-  }
+    props: {
+      meetUp: DummyMeetUps,
+    },
+  };
 }
