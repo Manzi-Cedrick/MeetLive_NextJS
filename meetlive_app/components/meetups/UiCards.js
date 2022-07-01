@@ -41,7 +41,7 @@ function UiCards() {
     },
   ];
   return (
-    <div className="flex bg-slate-300 justify-center ">
+    <div className="flex justify-center ">
       <WelcomeMeet />
       <MeetUp meetups={DummyMeetUps} />
       <WelcomeMeet />
