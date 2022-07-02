@@ -1,13 +1,13 @@
 import React from 'react'
 
-export const MeetDetailed = () => {
+export const MeetDetailed = (props) => {
   return (
     <div className=" m-auto p-5">
-        <img src="https://media.timeout.com/images/105883842/750/422/image.jpg" alt="No image" className="h-[65vsdh] m-auto w-ful]l" />
+        <img src={`${props.meetupsData.image}`} alt="No image" className="h-[65vsdh] m-auto w-ful]l" />
         <div className="m-auto text-center">
-            <p>Meeting Names</p>
-            <p>Description</p>
-            <p>Date</p>
+            <p>{props.meetupsData.name}</p>
+            <p>{props.meetupsData.description}</p>
+            <p>{props.meetupsData.date}</p>
         </div>
     </div>
   )
