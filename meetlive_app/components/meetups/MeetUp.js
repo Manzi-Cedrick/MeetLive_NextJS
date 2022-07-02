@@ -1,6 +1,11 @@
+import {useRouter} from 'next/router'
 import React from 'react'
 
 export const MeetUp = (props) => {
+    const router = useRouter();
+    const handleDetails = (id)=> {
+        router.push('/'+ id)
+    }
     return (
         <>
         <div className="flex drop-shadow-lg flex-col mt-5 gap-4 overflow-y-auto">
@@ -15,7 +20,7 @@ export const MeetUp = (props) => {
                 <p className="text-[11px] text-[#000000c8]">{meetup.location}</p>
                 </div>
                 <div>
-                    <button className="btn btn-primary border-2 rounded-xl border-solid border-violet-500 text-violet-500 p-4 px-10">View Details</button>
+                    <button className="btn btn-primary border-2 rounded-xl border-solid border-violet-500 text-violet-500 p-4 px-10" onClick={()=>handleDetails(meetup.id)}>View Details</button>
                 </div>
             </div>
         </div>
