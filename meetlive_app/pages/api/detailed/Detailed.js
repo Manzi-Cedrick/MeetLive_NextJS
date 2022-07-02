@@ -9,7 +9,7 @@ import MeetUp from '../../../models/MeetUpModel';
 export default function handler(req, res) {
     await connectionEstablish()
     try {
-        const retrievedData = await MeetUp.find({});
+        const retrievedData = await MeetUp.find({_id : req.params.id});
         if (!retrievedData) throw new Error('No Data fetched :',error.message)
         res.status(200).json({success :"ok",retrievedData: retrievedData});
     }catch (error) {
