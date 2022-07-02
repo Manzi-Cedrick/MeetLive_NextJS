@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 export default async function connectionEstablish (){
     try{
-        await mongoose.connect(process.env.db_connect_mongo,()=>{
+        await mongoose.connect(process.env.mongodb,()=>{
             console.log("Database successfuly connected")
         })
     }catch(error){
