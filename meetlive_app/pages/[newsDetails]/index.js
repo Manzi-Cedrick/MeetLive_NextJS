@@ -8,7 +8,7 @@ export default function DetailedPage (props) {
 }
 export async function getStaticPaths() {
     return {
-        fallback : true,
+        fallback : false,
         paths: [
             {
                 params:{
