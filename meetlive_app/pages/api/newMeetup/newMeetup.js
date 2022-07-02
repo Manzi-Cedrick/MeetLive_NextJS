@@ -9,14 +9,9 @@ export default async function AddMeetUp(req, res){
     // const data = req.body;
     // console.log(req.body);
     // const {name,image,description,address} = data;
-    connectionEstablish()
+    await connectionEstablish()
     try {
-        const addedData = await MeetUp.create({
-            title: req.body.title,
-            address: req.body.address,
-            description: req.body.description,
-            image: req.body.image,
-        })
+        const addedData = await MeetUp.create(req.body)
         res.status(200).json({success :"ok",data: addedData});
     }catch (error) {
         res.status(404);
